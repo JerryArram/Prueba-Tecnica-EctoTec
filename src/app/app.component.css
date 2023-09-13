@@ -1,0 +1,22 @@
+h1{
+    background-color: green;
+    background-size: 100px;
+    border-radius: 10%;
+    border-width: 100px;
+}
+form{
+    color: black;
+}
+h4{
+    color: green;
+    font-size: xx-large;
+}
+h5{
+    padding-top: 25px;
+}
+h6{
+    padding-top: 20px;
+}
+h6 :is("Green Leaves"){
+    color: greenyellow;
+}

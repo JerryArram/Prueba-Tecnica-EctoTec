@@ -1,0 +1,102 @@
+<div class="container">
+
+  <h4>Green Leaves</h4>
+  <hr>
+  <form [formGroup]="form" (submit)="send()" *ngIf="sender">
+  
+    <div>
+  
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Nombre</label>
+        <div class="col-8">
+  
+          <input class="form-control"
+                 type="text"
+                 placeholder="Nombre"
+                 [class.is-invalid] = "invalidName"
+                 formControlName="nombre" >
+          <small *ngIf="invalidName" class="text-danger">Este es un campo requerido</small>
+        </div>
+      </div>
+  
+  
+    </div>
+  
+    <div class="form-group row">
+      <label class="col-2 col-form-label">E-Mail</label>
+      <div class="col-md-8">
+  
+        <input class="form-control"
+               type="email"
+               placeholder="Correo electrónico"
+               [class.is-invalid] = "invalidEmail"
+               formControlName="email">
+        <small *ngIf="invalidEmail" class="text-danger">Ingrese un Correo Valido</small>
+      </div>
+    </div>
+  
+  
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Telefono</label>
+      <div class="col-md-8">
+  
+        <input class="form-control"
+               input type="text" 
+               name="telefono"
+               placeholder="Telefono"
+               [class.is-invalid] = "invalidPhone"
+               formControlName="telefono" >
+        <small *ngIf="invalidPhone" class="text-danger">Ingrese un Telefono Valido</small>
+               
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Fecha</label>
+      <div class="col-md-8">
+  
+        <input type="date" 
+               name="fecha" 
+               [min]="minDate" 
+               [max]="maxDate" 
+               [class.is-invalid] = "invalidDate"
+               formControlName="fecha"><br/>
+        <small *ngIf="invalidDate" class="text-danger">Este es un campo Requerido</small>
+               
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Ciudad y Estado</label>
+      <div class="col-md-8">
+  
+        <input type="text" 
+               name="ciudad" 
+               placeholder="Ciudad y Estado"
+               [class.is-invalid] = "invalidCity"
+               formControlName="ciudad"><br/>
+        <small  *ngIf="invalidCity" class="text-danger">Este es un campo Requerido</small>
+               
+      </div>
+    </div>
+  
+   
+   
+    <div class="form-group row">
+      <label class="col-2 col-form-label">&nbsp;</label>
+      <div class="input-group col-md-8">
+        <button [disabled]="form.invalid" type="submit" class="btn btn-outline-primary mr-2">
+          Enviar
+        </button>
+      </div>
+    </div>
+  
+  </form>
+
+  <h5 *ngIf="valid">Estimado Usuario, Recibimos sus datos y nos pondremos en contacto con usted en la
+    brevedad posible. Enviaremos un correo con información a su cuenta de correo.
+    <h6>Atte. Green Leaves</h6>
+  </h5>
+  
+  
+  </div>
